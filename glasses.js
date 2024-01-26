@@ -32,11 +32,16 @@ let Ammo, gui;
 export class Glasses {
     constructor(configs = {}, callback) {
         config = configs;
-        if (config.reverse) {
-            vmdFile = "./motion_reverse.vmd";
+        if (config.vmdFile) {
+            vmdFile = config.vmdFile;
         } else {
-            vmdFile = "./motion.vmd";
+            if (config.reverse) {
+                vmdFile = "./motion_reverse.vmd";
+            } else {
+                vmdFile = "./motion.vmd";
+            }
         }
+
         this._callback = callback;
     }
     async start() {
