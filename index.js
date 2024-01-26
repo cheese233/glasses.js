@@ -1,7 +1,7 @@
 import { Glasses } from "./glasses.js";
-window.toggle = () => {
+window.toggle = async () => {
     if (document.body.style.background == "black") {
-        new Glasses(
+        await new Glasses(
             {
                 modelFile: "./银狼.pmx",
                 reverse: true,
@@ -11,7 +11,7 @@ window.toggle = () => {
             }
         ).start();
     } else {
-        new Glasses(
+        await new Glasses(
             {
                 modelFile: "./银狼.pmx",
             },
@@ -20,5 +20,6 @@ window.toggle = () => {
             }
         ).start();
     }
+    console.log("finished");
 };
 document.body.innerHTML += `<a href='#' onclick='toggle()'>toggle</a>`;
