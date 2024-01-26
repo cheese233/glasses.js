@@ -86,7 +86,7 @@ export class Glasses {
         container.outerHTML = "";
         if (gui) gui.domElement.outerHTML = "";
     }
-    get available() {
+    static get available() {
         return checkAvailable();
     }
 }
@@ -167,7 +167,7 @@ async function init() {
         stats = new Stats();
         container.appendChild(stats.dom);
     } else {
-        stats = { begin: () => {}, end: () => {} };
+        stats = { begin: () => { }, end: () => { } };
     }
 
     controls = new OrbitControls(camera, renderer.domElement);
