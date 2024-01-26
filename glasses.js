@@ -305,3 +305,4 @@ function render() {
     helper.update(clock.getDelta());
     composer.render();
 }
+globalThis.Glasses = Glasses;

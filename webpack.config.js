@@ -4,7 +4,9 @@ module.exports = {
     mode: "development",
     plugins: [
         new HtmlWebpackPlugin({
-            title: "Webpack demo",
+            title: "Glasses.js demo",
+            filename: "index.html",
+            chunks: ["index"],
         }),
         new CopyPlugin({
             patterns: ["./models"],
@@ -18,5 +20,8 @@ module.exports = {
             },
         ],
     },
-    entry: "./index.js",
+    entry: {
+        index: "./index.js",
+        glasses: "./glasses.js",
+    },
 };
